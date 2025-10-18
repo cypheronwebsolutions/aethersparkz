@@ -1,6 +1,6 @@
 import SectionHeading from "@/components/SectionHeading";
 import { Card } from "@/components/ui/card";
-
+import DemoImg from '@/assets/demoimg.png'
 const AboutUs = () => {
   return (
     <div className="min-h-screen flex flex-col">
@@ -8,13 +8,13 @@ const AboutUs = () => {
       <main className="flex-1">
         <section className="container mx-auto px-4 py-16">
           <SectionHeading variant='primary'>ABOUT US</SectionHeading>
-          <p className="text-lg text-foreground mt-6 max-w-3xl">
+          <p className="text-xl text-foreground mt-6 max-w-3xl">
             The best proof of our professional art and design education. Check out the masterpieces and let their impactful creations from across all majors speak for themselves!
           </p>
 
           {/* Vision Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-            <Card className="bg-secondary text-secondary-foreground p-8">
+            <Card className="bg-secondary text-secondary-foreground p-8 rounded-none">
               <h3 className="text-2xl font-bold mb-4 text-center underline decoration-2 underline-offset-4">
                 Vision
               </h3>
@@ -22,7 +22,7 @@ const AboutUs = () => {
                 The best proof of our professional art and design education. Check out the masterpieces and let their impactful creations from across all majors speak for themselves!
               </p>
             </Card>
-            <Card className="bg-secondary text-secondary-foreground p-8">
+            <Card className="bg-secondary text-secondary-foreground p-8 rounded-none">
               <h3 className="text-2xl font-bold mb-4 text-center underline decoration-2 underline-offset-4">
                 Vision
               </h3>
@@ -41,32 +41,7 @@ const AboutUs = () => {
             {/* Classroom */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
               <div className="space-y-6">
-                {[1, 2, 3].map((item) => (
-                  <div key={item} className="relative w-full h-64 bg-gradient-to-b from-sky to-white rounded-2xl overflow-hidden">
-                    {/* Sky background */}
-                    <div className="absolute top-12 left-1/2 -translate-x-1/2 w-32 h-16 bg-cloud rounded-full blur-lg opacity-90"></div>
-                    
-                    {/* Hills */}
-                    <div className="absolute bottom-0 left-0 right-0">
-                      <svg viewBox="0 0 400 150" className="w-full h-auto">
-                        <path
-                          d="M0,70 Q100,30 200,70 T400,70 L400,150 L0,150 Z"
-                          fill="hsl(76, 61%, 67%)"
-                          opacity="0.6"
-                        />
-                        <path
-                          d="M0,90 Q120,50 240,90 T400,90 L400,150 L0,150 Z"
-                          fill="hsl(76, 61%, 47%)"
-                          opacity="0.8"
-                        />
-                        <path
-                          d="M0,110 Q100,70 200,110 T400,110 L400,150 L0,150 Z"
-                          fill="hsl(76, 100%, 25%)"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                ))}
+                <img src={DemoImg} alt='Classroom' />
               </div>
               <div>
                 <SectionHeading variant="accent">Classroom</SectionHeading>
@@ -85,32 +60,7 @@ const AboutUs = () => {
                 </p>
               </div>
               <div className="space-y-6">
-                {[1, 2].map((item) => (
-                  <div key={item} className="relative w-full h-48 bg-gradient-to-b from-sky to-white rounded-2xl overflow-hidden">
-                    {/* Sky background */}
-                    <div className="absolute top-8 left-1/2 -translate-x-1/2 w-24 h-12 bg-cloud rounded-full blur-lg opacity-90"></div>
-                    
-                    {/* Hills */}
-                    <div className="absolute bottom-0 left-0 right-0">
-                      <svg viewBox="0 0 400 120" className="w-full h-auto">
-                        <path
-                          d="M0,60 Q100,30 200,60 T400,60 L400,120 L0,120 Z"
-                          fill="hsl(76, 61%, 67%)"
-                          opacity="0.6"
-                        />
-                        <path
-                          d="M0,75 Q120,45 240,75 T400,75 L400,120 L0,120 Z"
-                          fill="hsl(76, 61%, 47%)"
-                          opacity="0.8"
-                        />
-                        <path
-                          d="M0,90 Q100,60 200,90 T400,90 L400,120 L0,120 Z"
-                          fill="hsl(76, 100%, 25%)"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                ))}
+                <img src={DemoImg} alt='Exhibition' />
               </div>
             </div>
           </div>
