@@ -5,11 +5,11 @@ const Header = () => {
   const location = useLocation();
 
   const navItems = [
-    { name: "Home", path: "/aethersparkz" },
-    { name: "Course", path: "/aethersparkz/course" },
-    { name: "Showcase", path: "/aethersparkz/showcase" },
-    { name: "Campaign", path: "/aethersparkz/campaign" },
-    { name: "About Us", path: "/aethersparkz/about-us" },
+    { name: "Home", path: "/" },
+    { name: "Course", path: "/course" },
+    { name: "Showcase", path: "/showcase" },
+    { name: "Campaign", path: "/campaign" },
+    { name: "About Us", path: "/about-us" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
