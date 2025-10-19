@@ -16,7 +16,7 @@ const SectionHeading = ({
             className={cn(
                 "font-bold mb-0 pb-0 relative inline-block leading-tight",
                 variant === "default" && "text-black",
-                variant === "accent" && "text-accent italic",
+                variant === "accent" && "text-accent italic text-5xl font-bold",
                 variant === "primary" && "text-primary text-5xl",
                 className
             )}
