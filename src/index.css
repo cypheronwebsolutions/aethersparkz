@@ -38,12 +38,6 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
 
-    --sky: 199 89% 85%;
-    --cloud: 0 0% 95%;
-    --lime: 76 61% 47%;
-    --lime-light: 76 61% 67%;
-    --lime-dark: 76 100% 25%;
-
     --gradient-hero: linear-gradient(180deg, hsl(199 89% 85%) 0%, hsl(0 0% 100%) 100%);
   }
 }
