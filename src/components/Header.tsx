@@ -1,8 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
-import { Phone, Facebook, Instagram, BookText } from "lucide-react";
+import { Phone, Facebook, Instagram, BookText, Menu } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
 import Logo from "../assets/logo.jpg"
 const Header = () => {
   const location = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -78,12 +82,34 @@ const Header = () => {
                       }`}
                   >
                     {item.name}
-                    {/*{isActive(item.path) && (*/}
-                    {/*    <span className="absolute -bottom-2 left-0 right-0 h-0.5 bg-secondary"></span>*/}
-                    {/*)}*/}
                   </Link>
               ))}
             </nav>
+
+            {/* Mobile menu */}
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
+              <SheetTrigger asChild className="md:hidden">
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-64">
+                <nav className="flex flex-col gap-4 mt-8">
+                  {navItems.map((item) => (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      onClick={() => setIsOpen(false)}
+                      className={`text-xl transition-all hover:text-secondary ${
+                        isActive(item.path) ? "text-secondary font-semibold" : ""
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </nav>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </header>
