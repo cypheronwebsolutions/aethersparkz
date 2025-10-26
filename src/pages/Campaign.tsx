@@ -1,10 +1,20 @@
 import SectionHeading from "@/components/SectionHeading";
 import { Card } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 import DemoImg from '@/assets/demoimg.png'
+
 const Campaign = () => {
-  const campaigns = Array(9).fill({
-    title: "Campaign 2025",
-  });
+  const campaigns = [
+    { id: "1", title: "Campaign 2025" },
+    { id: "2", title: "Spring Art Festival" },
+    { id: "3", title: "Digital Innovation Week" },
+    { id: "4", title: "Summer Exhibition" },
+    { id: "5", title: "Community Outreach Project" },
+    { id: "6", title: "Winter Showcase" },
+    { id: "7", title: "Campaign 2025" },
+    { id: "8", title: "Campaign 2025" },
+    { id: "9", title: "Campaign 2025" },
+  ];
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -27,20 +37,19 @@ const Campaign = () => {
 
           {/* Campaign Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
-            {campaigns.map((campaign, index) => (
-                <Card
-                    key={index}
-                    className="overflow-hidden cursor-pointer rounded-none border-0 shadow-none bg-transparent hover:shadow-xl transition-shadow"
-                >
+            {campaigns.map((campaign) => (
+              <Link key={campaign.id} to={`/campaign/${campaign.id}`}>
+                <Card className="overflow-hidden cursor-pointer rounded-none border-0 shadow-none bg-transparent hover:shadow-xl transition-shadow">
                   <img
-                      src={DemoImg}
-                      alt="Campaign Hero"
-                      className="w-full aspect-[4/3] object-cover"
+                    src={DemoImg}
+                    alt="Campaign Hero"
+                    className="w-full aspect-[4/3] object-cover"
                   />
                   <div className="p-4 text-center bg-transparent">
                     <h3 className="text-foreground">{campaign.title}</h3>
                   </div>
                 </Card>
+              </Link>
             ))}
           </div>
         </section>

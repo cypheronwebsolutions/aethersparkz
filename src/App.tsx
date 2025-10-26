@@ -8,6 +8,7 @@ import Course from "./pages/Course";
 import CourseDetail from "./pages/CourseDetail";
 import Showcase from "./pages/Showcase";
 import Campaign from "./pages/Campaign";
+import CampaignDetail from "./pages/CampaignDetail";
 import AboutUs from "./pages/AboutUs";
 import NotFound from "./pages/NotFound";
 import Header from "@/components/Header.tsx";
@@ -29,6 +30,7 @@ const App = () => (
             <Route path="/course/:courseId" element={<CourseDetail />} />
             <Route path="/showcase" element={<Showcase />} />
             <Route path="/campaign" element={<Campaign />} />
+            <Route path="/campaign/:campaignId" element={<CampaignDetail />} />
             <Route path="/about-us" element={<AboutUs />} />
             {/* Fallback route */}
             <Route path="*" element={<NotFound />} />
