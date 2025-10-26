@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { HashRouter, Routes, Route } from "react-router-dom"; // ✅ use HashRouter here
 import Home from "./pages/Home";
 import Course from "./pages/Course";
+import CourseDetail from "./pages/CourseDetail";
 import Showcase from "./pages/Showcase";
 import Campaign from "./pages/Campaign";
 import AboutUs from "./pages/AboutUs";
@@ -25,6 +26,7 @@ const App = () => (
             {/* You don’t need /aethersparkz prefix when using HashRouter */}
             <Route path="/" element={<Home />} />
             <Route path="/course" element={<Course />} />
+            <Route path="/course/:courseId" element={<CourseDetail />} />
             <Route path="/showcase" element={<Showcase />} />
             <Route path="/campaign" element={<Campaign />} />
             <Route path="/about-us" element={<AboutUs />} />
